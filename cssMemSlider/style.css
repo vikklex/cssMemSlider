@@ -47,10 +47,10 @@
 .wrapper label {
   cursor: pointer;
   display: inline-block;
-  height: 8px;
+  height: 0.5rem;
   margin: 25px 12px 0 16px;
   position: relative;
-  width: 8px;
+  width: 0.5rem;
   border-radius: 50%;
 }
 
@@ -136,4 +136,28 @@
 
 #slide4:checked ~ #title4 {
   display: block;
+}
+
+@media screen and (max-width: 26.25rem) {
+  .wrapper {
+    width: 23rem;
+  }
+  .slide1 {
+    background-image: url("20.jpg");
+  }
+  .slide2 {
+    background-image: url("30.jpg");
+  }
+  .slide3 {
+    background-image: url("40.jpg");
+  }
+  .slide4 {
+    background-image: url("60.jpg");
+  }
+  .wrapper .controls {
+    left: 50%;
+  }
+  .title {
+    top: 20%;
+  }
 }
