@@ -101,11 +101,25 @@
   transform: scale(1);
 }
 
-#slide1:checked ~ .slider > .title1,
-#slide2:checked ~ .slider > .title2,
-#slide3:checked ~ .slider > .title3,
-#slide4:checked ~ .slider > .title4 {
-  opacity: 1;
-  z-index: 1;
-  transform: scale(1);
+.title {
+  display: none;
+  position: relative;
+  top: 20px;
+  z-index: -1;
+}
+
+#slide1:checked ~ #title1 {
+  display: block;
+}
+
+#slide2:checked ~ #title2 {
+  display: block;
+}
+
+#slide3:checked ~ #title3 {
+  display: block;
+}
+
+#slide4:checked ~ #title4 {
+  display: block;
 }
