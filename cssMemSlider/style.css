@@ -1,0 +1,153 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.wrapper {
+  height: 20rem;
+  margin: 10% auto 0;
+  position: relative;
+  width: 43rem;
+}
+.slider {
+  height: inherit;
+  overflow: hidden;
+  position: relative;
+  width: inherit;
+}
+.wrapper > input {
+  display: none;
+}
+
+.slides {
+  height: inherit;
+  position: absolute;
+  width: inherit;
+}
+
+.slide1 {
+  background-image: url("2.jpg");
+}
+.slide2 {
+  background-image: url("3.jpg");
+}
+.slide3 {
+  background-image: url("4.jpg");
+}
+.slide4 {
+  background-image: url("6.jpg");
+}
+.wrapper .controls {
+  left: 92%;
+  margin-left: -6.313rem;
+  position: absolute;
+}
+
+.wrapper label {
+  cursor: pointer;
+  display: inline-block;
+  height: 0.5rem;
+  margin: 1.563rem 0.75rem 0 1rem;
+  position: relative;
+  width: 0.5rem;
+  border-radius: 50%;
+}
+
+.wrapper label:after {
+  border: 0.125rem solid #ddd;
+  content: " ";
+  display: block;
+  height: 0.75rem;
+  left: -0.25rem;
+  position: absolute;
+  top: -0.25rem;
+  width: 0.75rem;
+  border-radius: 50%;
+}
+
+.wrapper label:hover {
+  background-color: gray;
+}
+
+#slide1:checked ~ .controls label:nth-of-type(1),
+#slide2:checked ~ .controls label:nth-of-type(2),
+#slide3:checked ~ .controls label:nth-of-type(3),
+#slide4:checked ~ .controls label:nth-of-type(4) {
+  background: rgb(217, 187, 245);
+}
+.slides {
+  height: inherit;
+  opacity: 0;
+  position: absolute;
+  width: inherit;
+  z-index: 0;
+  transform: scale(1.5);
+  transition: transform ease-in-out 0.5s, opacity ease-in-out 0.5s;
+}
+
+#slide1:checked ~ .slider > .slide1,
+#slide2:checked ~ .slider > .slide2,
+#slide3:checked ~ .slider > .slide3,
+#slide4:checked ~ .slider > .slide4 {
+  opacity: 1;
+  z-index: 1;
+  transform: scale(1);
+}
+
+.title {
+  display: none;
+  position: relative;
+  top: 1.25rem;
+  z-index: -1;
+  animation: fadein 5s;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+#slide1:checked ~ #title1 {
+  display: block;
+}
+
+#slide2:checked ~ #title2 {
+  display: block;
+}
+
+#slide3:checked ~ #title3 {
+  display: block;
+}
+
+#slide4:checked ~ #title4 {
+  display: block;
+}
+
+@media screen and (max-width: 26.25rem) {
+  .wrapper {
+    width: 23rem;
+  }
+  .slide1 {
+    background-image: url("20.jpg");
+  }
+  .slide2 {
+    background-image: url("30.jpg");
+  }
+  .slide3 {
+    background-image: url("40.jpg");
+  }
+  .slide4 {
+    background-image: url("60.jpg");
+  }
+  .wrapper .controls {
+    left: 50%;
+  }
+  .title {
+    top: 20%;
+  }
+}
